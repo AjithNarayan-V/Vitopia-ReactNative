@@ -1,11 +1,15 @@
-import type { NativeStackScreenProps } from "@react-navigation/stack";
-import type { RootStackParamList } from "../App";
+import type { NavigationProp, RouteProp } from "@react-navigation/native";
+import type { RootParamList } from "../navigation/RouteTypes";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-type Props = NativeStackScreenProps<RootStackParamList, "About1">;
+type Props = {
+  navigation: NavigationProp<RootParamList, "About1">;
+  route: RouteProp<RootParamList, "About1">;
+};
 
 export default function About1({ navigation, route }: Props) {
-  const { username, mood } = route.params;
+  const username = route.params?.username ?? "Friend";
+  const mood = route.params?.mood;
 
   return (
     <View style={styles.container}>

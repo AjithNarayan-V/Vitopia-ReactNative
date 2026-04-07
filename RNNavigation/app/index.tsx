@@ -1,8 +1,10 @@
-import type { NativeStackScreenProps } from "@react-navigation/stack";
-import type { RootStackParamList } from "../App";
+import type { NavigationProp } from "@react-navigation/native";
+import type { RootParamList } from "../navigation/RouteTypes";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-type Props = NativeStackScreenProps<RootStackParamList, "Home">;
+type Props = {
+  navigation: NavigationProp<RootParamList, "Home">;
+};
 
 export default function Index({ navigation }: Props) {
   return (

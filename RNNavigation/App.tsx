@@ -1,3 +1,10 @@
+import DrawerNavigator from "./navigation/DrawerNavigator";
+import DrawerWithTabs from "./navigation/DrawerWithTabs";
+import TabNavigator from "./navigation/TabNavigator";
+
+/*
+Stack navigator setup (kept for learning/reference):
+
 import "react-native-gesture-handler";
 
 import { NavigationContainer } from "@react-navigation/native";
@@ -34,3 +41,28 @@ export default function App() {
     </NavigationContainer>
   );
 }
+*/
+
+export default function App() {
+  return <DrawerWithTabs  />;
+}
+
+/*
+Drawer-only navigator setup (kept for learning/reference):
+
+import DrawerNavigator from "./navigation/DrawerNavigator";
+
+export default function App() {
+  return <DrawerNavigator />;
+}
+*/
+
+/*
+Tab navigator setup (kept for learning/reference):
+
+import TabNavigator from "./navigation/TabNavigator";
+
+export default function App() {
+  return <TabNavigator />;
+}
+*/

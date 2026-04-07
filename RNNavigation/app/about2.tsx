@@ -1,11 +1,15 @@
-import type { NativeStackScreenProps } from "@react-navigation/stack";
-import type { RootStackParamList } from "../App";
+import type { NavigationProp, RouteProp } from "@react-navigation/native";
+import type { RootParamList } from "../navigation/RouteTypes";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
-type Props = NativeStackScreenProps<RootStackParamList, "About2">;
+type Props = {
+  navigation: NavigationProp<RootParamList, "About2">;
+  route: RouteProp<RootParamList, "About2">;
+};
 
 export default function About2({ navigation, route }: Props) {
-  const { budget, currency } = route.params;
+  const budget = route.params?.budget ?? 0;
+  const currency = route.params?.currency ?? "USD";
 
   return (
     <View style={styles.container}>
