@@ -20,9 +20,9 @@ export default function Index() {
       <Link href="./products" asChild>
         <Text>Go to Products</Text>
       </Link>
-        <Link href="/about/not-found">
-                Go to Custom Not Found
-          </Link>
+      <Link href="/about/not-found" asChild>
+        <Text>Go to Custom Not Found</Text>
+      </Link>
     </View>
   );
 }

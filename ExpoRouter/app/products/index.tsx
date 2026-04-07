@@ -6,14 +6,26 @@ const index = () => {
   return (
     <View>
       <Text>Product List</Text>
-        <Link href={{ pathname: "/products/[id]", params: { id: "1" } }}>
-          Go to Product 1
+        <Link
+          href={{ pathname: "/products/[id]", params: { id: "1" } }}
+          asChild
+        >
+          <Text>Go to Product 1</Text>
         </Link>
-        <Link href={{ pathname: "/products/[id]", params: { id: "2" } }}>
-          Go to Product 2
+        <Link
+          href={{ pathname: "/products/[id]", params: { id: "2" } }}
+          asChild
+        >
+          <Text>Go to Product 2</Text>
         </Link>
-        <Link href={{ pathname: "/products/[...id]", params: { id: ["electronics", "laptops"] } }}> 
-            Go to Electronics , Laptops 
+        <Link
+          href={{
+            pathname: "/products/[...id]",
+            params: { id: ["electronics", "laptops"] },
+          }}
+          asChild
+        >
+          <Text>Go to Electronics, Laptops</Text>
         </Link>
       
 

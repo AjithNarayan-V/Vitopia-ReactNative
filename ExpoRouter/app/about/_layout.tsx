@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 import { View, Text, StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function RootLayout() {
+export default function AboutLayout() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.HeaderContainer}>
