@@ -1,10 +1,13 @@
-import { Text, View, StyleSheet, ScrollView, Button } from "react-native";
-import Pressable from "../../components/Pressable";
-import Modal from "../../components/model";
+import ButtonComponent from "@/components/ButtonComponents/ButtonComponent";
+import { Button, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import ActivityIndicator from "../../components/activityIndicator";
+import Modal from "../../components/model";
+import Pressable from "../../components/Pressable";
 import ShowAlert from "../../components/ShowAlert";
 export default function Index() {
   return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
     <ScrollView style={{ flex: 1, backgroundColor: '#fff', padding: 20, paddingBottom: 100 }}>
       <View
         style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
@@ -33,10 +36,47 @@ export default function Index() {
         <Modal />
         <ActivityIndicator />
         <ShowAlert />
+        <View style={styles.buttonContainer}>
+          <Button
+            title="platform specific button"
+            color={Platform.OS === "android" ? "#ffffff" : "#0a6f53"}
+            onPress={() => console.log("platform button clicked")}
+          />
+        </View>
+        <TouchableOpacity
+          style={styles.customButton}
+          onPress={() => console.log("custom button clicked")}
+          activeOpacity={0.8}
+        >
+          <Text style={styles.customButtonText}>Custom Styled Button</Text>
+        </TouchableOpacity>
+        <ButtonComponent />
       </View>
 
     </ScrollView>
+    </SafeAreaView>
 
   );
 }
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    backgroundColor: Platform.OS === "android" ? "#0a6f53" : "#dcefe9",
+    borderRadius: 10,
+    padding: 8,
+  },
+  customButton: {
+    backgroundColor: "#f97316",
+    paddingVertical: 14,
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  customButtonText: {
+    color: "#ffffff",
+    fontWeight: "700",
+    fontSize: 16,
+  },
+});
+
+
 
